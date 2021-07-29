@@ -12,10 +12,19 @@ function App() {
     const list = userlist.filter((user)=>user.id !== id);
     setUserList(list);
   }
-  const finduser = (id)=>{
-    const list = userlist.filter((user)=>user.id == id);
-    setUserList(list);
+
+  // const [id, setId] = useState("");
+  // const updateId = (e) => {
+  //     setId = e.target.value;
+  // }
+
+  const adduser = (id,name,dept)=>{
+    //e.preventDefault();
+    console.log(id);
+   // console.log(e);
+    setUserList([{...userlist},{id,name,dept}]);
   }
+  
 
   return (
    
@@ -31,7 +40,7 @@ function App() {
             </div>
           </Route>
           <Route path='/create'>
-              <CreateUser status='add' />
+              <CreateUser status='add' addCallback={adduser} />
           </Route>
           <Route path='/edit/:id' children={<CreateUser status='edit'/>}>
             

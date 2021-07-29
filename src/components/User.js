@@ -9,7 +9,7 @@ const User = ({id, name, dept, callback})=>{
             <p>Id: {id} </p> 
             <p>Dept: {dept}</p>
             <button onClick={()=>callback(id)}>Delete</button>
-            <Link to={`/edit/${id}`} onClick={finduser()}> EDIT</Link>
+            <Link to={`/edit/${id}`}> EDIT</Link>
         </div>
     );
 }

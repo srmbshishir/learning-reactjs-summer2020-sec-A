@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-const CreateUser = ({status, addNewUser, list})=>{
+const AddProduct = ({status, addNewUser, list})=>{
     const {id:eid} = useParams();
     const [user, setUser] = useState({name: '', id:'', dept:''});
     const history = useHistory();
@@ -42,13 +42,13 @@ const CreateUser = ({status, addNewUser, list})=>{
             <br/>
             <h3>{status==='add'?'Create':'Edit'} User Page: {eid}</h3>
             <form onSubmit={onsubmit}>
-                Name: <input type='text' name='name' onChange={change} /> <br/>
-                ID: <input type='text' name='id' onChange={change} /><br/>
-                Dept: <input type='text' name='dept' onChange={change} /><br/>
-                <input type='submit' value={status==='add'?'Create':'Update'}/>
+                Product Name: <input type='text' name='product_name' onChange={change} /> <br/>
+                Quantity: <input type='text' name='quantity' onChange={change} /><br/>
+                Price: <input type='text' name='price' onChange={change} /><br/>
+                <input type='submit' value='Add Product'/>
             </form>
         </>
     );
 }
 
-export default CreateUser;
+export default AddProduct;
